@@ -8,7 +8,15 @@ namespace app
         {
             Console.Write("Введите цифры ");
 
-            Console.WriteLine(Console.ReadLine()[1]);
+            var a = Console.ReadLine();
+            if (a.Length<3) 
+            {
+                Console.WriteLine("Третьей цифры нет");
+            }
+            else
+            {
+                Console.WriteLine(a[2]);
+            }        
         }
 
     }
