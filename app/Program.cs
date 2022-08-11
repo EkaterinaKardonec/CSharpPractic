@@ -9,20 +9,31 @@ namespace app
             Console.WriteLine("Введите число");
             string a = Console.ReadLine();
             int i = 0, j = a.Length - 1;
+            bool flag = true;
+
 
             while (i != a.Length / 2)
             {
                 if (a[i] != a[j])
                 {
-                    Console.WriteLine("Введеное число - НЕ палиндром");
-                    Environment.Exit(0);
+                    flag = false;
+                    break;
                 }
 
                 i++;
                 j--;
             }
 
-            Console.WriteLine("Введеное число - палиндром");
+            if (flag == true)
+            {
+                Console.WriteLine("Введеное число - палиндром");
+            }
+            else
+            {
+                Console.WriteLine("Введеное число - НЕ палиндром");
+            }
+
+
         }
     }
 }
