@@ -13,11 +13,8 @@ namespace app
 
             for (int i = 1; i <= N; i++)
             {
-                        
-                    Console.WriteLine(i*i*i);
-                
+                Console.WriteLine(Math.Pow(i, 3));
             }
-
         }
     }
 }
