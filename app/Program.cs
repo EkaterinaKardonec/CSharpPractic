@@ -4,9 +4,21 @@ namespace app
 {
     class Program
     {
-        static void Main(string[] args)
+        static void ReadNumber(int number)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(number * number);
+        }
+        static string WriteNumber(int number)
+        {
+            return number %% 2 == 0 ? "Кратное" : "Не кратное";
+        }
+        public static void Main(string[] args)
+        {
+            int number = Convert.ToInt32(Console.ReadLine())
+            ReadNumber(number);
+            Console.WriteLine(WriteNumber(number));
+            
+            Console.ReadLine();
         }
     }
 }
