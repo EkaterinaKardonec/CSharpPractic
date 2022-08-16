@@ -4,11 +4,11 @@ namespace app
 {
     class Program
     {
-        static void ReadNumber(int number)
+        static int PowTwoNumber(int number)
         {
-            Console.WriteLine(number * number);
+            return number * number;
         }
-        static string WriteNumber(int number)
+        static string MultipleTwoNumber(int number)
         {
             return number %% 2 == 0 ? "Кратное" : "Не кратное";
         }
@@ -16,7 +16,7 @@ namespace app
         {
             int number = Convert.ToInt32(Console.ReadLine())
             ReadNumber(number);
-            Console.WriteLine(WriteNumber(number));
+            Console.WriteLine(MultipleTwoNumber(PowTwoNumber(number)));
             
             Console.ReadLine();
         }
