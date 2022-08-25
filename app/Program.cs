@@ -6,7 +6,8 @@ namespace app
     {
         static void Main(string[] args)
         {
-            double result = 0;
+            double[] resultArray = { 0, 0, 0, 0 };
+            int[] countArray = { 0, 0, 0, 0 };
             double[,] myArray = new double[,]
             {
               {1,4,7,2},
@@ -14,16 +15,21 @@ namespace app
               {8,4,2,4}
             };
 
-            for (int i = 0; i < myArray.GetLength(1); i++)
+            for (int i = 0; i < myArray.GetLength(0); i++)
             {
-                result = 0;
-
-                for (int j = 0; j < myArray.GetLength(0); j++)
+                for (int j = 0; j < myArray.GetLength(1); j++)
                 {
-                    result += myArray[j, i];
+                    Console.Write(" " + $"{myArray[i, j]}");
+                    resultArray[j] += myArray[i, j];
+                    countArray[j]++;
                 }
+                Console.WriteLine();
+            }
+            for (int i = 0; i < resultArray.Length; i++)
+            {
+                double result = resultArray[i] / countArray[i];
 
-                Console.WriteLine($"Среднее арифметическое столбца {i}: " + result / myArray.GetLength(0));
+                Console.Write(" " + result);
             }
         }
     }
