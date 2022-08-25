@@ -35,7 +35,7 @@ namespace app
                 if (row < 1) row = 1;
 
                 if (column > matrix.GetLength(1) - 2) column = matrix.GetLength(1) - 2;
-                if (column < 1) row = 1;
+                if (column < 1) column = 1;
 
                 matrix[row, column] = "@";
                 WriteMatrix(matrix);
