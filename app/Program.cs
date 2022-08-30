@@ -6,29 +6,42 @@ namespace app
     {
         static void Main(string[] args)
         {
-            int[,] myArray = new int[3, 4]
+            int[][] myArray = new int[][]
           {
-                 {1,4,7,2},
-                 {5,9,2,3},
-                 {8,4,2,4}
+                 new int[]{1,4,7,2},
+                 new int[]{5,9,2,3},
+                 new int[]{8,4,2,4}
           };
             for (int i = 0; i < myArray.GetLength(0); i++)
             {
-                for (int j = 0; j < myArray.GetLength(1); j++)
+                myArray[i] = BubleSort(myArray[i]);
+            }
+
+            for (int i = 0; i < myArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < myArray[i].GetLength(0); j++)
                 {
-                    for (int g = j + 1; g < myArray.GetLength(1); g++)
-                    {
-                        if (myArray[i, j] < myArray[i, g])
-                        {
-                            int temp = myArray[i, j];
-                            myArray[i, j] = myArray[i, g];
-                            myArray[i, g] = temp;
-                        }
-                    }
-                    Console.Write(myArray[i, j] + " ");
+                    Console.Write(myArray[i][j] + " ");
                 }
                 Console.WriteLine();
             }
+
+        }
+        public static int[] BubleSort(int[] myArray)
+        {
+            for (int j = 0; j < myArray.GetLength(0); j++)
+            {
+                for (int g = j + 1; g < myArray.GetLength(0); g++)
+                {
+                    if (myArray[j] < myArray[g])
+                    {
+                        int temp = myArray[j];
+                        myArray[j] = myArray[g];
+                        myArray[g] = temp;
+                    }
+                }
+            }
+            return myArray;
         }
     }
 }
